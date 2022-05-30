@@ -93,7 +93,7 @@ public class City extends JFrame implements ActionListener{
 		
 		
 		this.description.setText(description);
-		this.temp.setText(temp + "°C" );
+		this.temp.setText(temp + " Â°C" );
 		this.humidity.setText(humidity + "%");
 		this.wind_speed.setText(wind_speed + "m/h");
 
