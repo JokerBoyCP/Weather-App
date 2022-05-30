@@ -11,5 +11,3 @@ Produktfunktionen:
 Kann-Kriterium:
   - Die Anwendung kann Wetter-Symbole anzeigen, die dem aktuellen Wetter entsprechen.
   - Favoriten wieder entfernen können
-
-  O haxhiiiiii
