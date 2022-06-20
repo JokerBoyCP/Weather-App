@@ -47,6 +47,7 @@ public class City extends JFrame implements ActionListener{
 	public City(String city, String description, double temp, long humidity, double wind_speed, double lat,
 			double lon) {
 
+		//Test
 		// adjust size and set layout
 		frame.setPreferredSize(new Dimension(566, 565));
 		frame.setLayout(null);
