@@ -35,7 +35,7 @@ public class Menu implements ActionListener {
 	public Menu() {
 
 		// construct components
-		logo_label = new JLabel(new ImageIcon("C:\\Users\\PACHECOC\\Desktop\\Java\\Weather App\\src\\weather-icon.png"));
+		logo_label = new JLabel(new ImageIcon("\\src\\weather-icon.gif"));
 		txt_input = new JTextField(5);
 		search_button = new JButton("Search");
 		favorite_button = new JButton("Favorites List");
