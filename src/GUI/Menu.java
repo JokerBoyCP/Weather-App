@@ -34,6 +34,7 @@ public class Menu implements ActionListener {
 
 	public Menu() {
 
+		//Test
 		// construct components
 		logo_label = new JLabel(new ImageIcon("\\src\\weather-icon.gif"));
 		txt_input = new JTextField(5);
