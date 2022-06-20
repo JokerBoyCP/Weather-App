@@ -57,7 +57,7 @@ public class City extends JFrame implements ActionListener{
 		frame.pack();
 
 		// construct components
-		logo_label = new JLabel(new ImageIcon("\\src\\weather-icon.gif"));
+		logo_label = new JLabel(new ImageIcon("src\\weather-icon.gif"));
 		city_label = new JLabel("City:");
 		city_name = new JLabel(" " +city);
 		data_panel = new JPanel();
