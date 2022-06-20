@@ -16,11 +16,17 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import Data.FavoritenData;
+import Logik.API_objects;
 import Logik.Map;
+import Logik.Root;
+import interfaces.WeatherApp;
+import javax.swing.ImageIcon;
 
 public class City extends JFrame implements ActionListener{
 
 	JFrame frame = new JFrame();
+	
+	//GoogleMaps Map Objekt
 	Map mpp;
 	FavoritenData favData ;
 	
@@ -47,7 +53,6 @@ public class City extends JFrame implements ActionListener{
 	public City(String city, String description, double temp, long humidity, double wind_speed, double lat,
 			double lon) {
 
-		//Test
 		// adjust size and set layout
 		frame.setPreferredSize(new Dimension(566, 565));
 		frame.setLayout(null);
@@ -107,7 +112,11 @@ public class City extends JFrame implements ActionListener{
 		frame.add(map_panel);
 		frame.add(back_button);
 		frame.add(fav_button);
+		
+		//Google Maps Api wird aufgerufen.
+		
 		map_panel.add(mpp = new Map(lat, lon));
+		
 		
 		logo_panel.setLayout(new FlowLayout());
 		logo_panel.add(logo_label);

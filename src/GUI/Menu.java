@@ -1,10 +1,8 @@
 package GUI;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,7 +15,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import Logik.API_objects;
+import Logik.Root;
 import Logik.api_call;
+import interfaces.WeatherApp;
 
 public class Menu implements ActionListener {
 
@@ -34,10 +35,9 @@ public class Menu implements ActionListener {
 
 	public Menu() {
 
-		
 		// construct components
 		logo_label = new JLabel(new ImageIcon("src\\weather-icon.gif"));
-		txt_input = new JTextField(5);
+		txt_input = new JTextField();
 		search_button = new JButton("Search");
 		favorite_button = new JButton("Favorites List");
 		switzerland_button = new JButton("Switzerland List");
@@ -106,14 +106,16 @@ public class Menu implements ActionListener {
 		// TODO Auto-generated method stub
 		if (e.getSource() == search_button) {
 			City city;
-			api_call apc = new api_call(txt_input.getText());
-			if (apc.getCity() == null) {
+			WeatherApp wa = new API_objects();
+			Root rootVariable = wa.getWeather(txt_input.getText());
+			
+			if (rootVariable.getName() == null) {
 				JOptionPane.showMessageDialog(frame, "The City you are searching for, could not be found. ",
 						"Search error", JOptionPane.WARNING_MESSAGE);
 			} else
 
-				city = new City(apc.getCity(), apc.getDescription(), apc.getTemp(), apc.getHumidity(),
-						apc.getWind_speed(), apc.getLat(), apc.getLon());
+				city = new City(rootVariable.getName(), rootVariable.getWeather().get(0).getDescription(), rootVariable.getMain().getTemp(), rootVariable.getMain().getHumidity(),
+						rootVariable.getWind().getSpeed(), rootVariable.getCoord().getLat(), rootVariable.getCoord().getLon());
 
 		}else if(e.getSource() == favorite_button) {
 			Favorites fav = new Favorites();

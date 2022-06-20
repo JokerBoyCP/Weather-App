@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 public class Map extends JPanel {
 
-	
+	String destinationFile;
 
 	public Map (double lat, double lon) {
 
@@ -33,7 +33,9 @@ public class Map extends JPanel {
 			URL url = new URL(imageUrl);
 			InputStream is = url.openStream();
 			OutputStream os = new FileOutputStream(destinationFile);
-
+			
+			
+			
 			byte[] b = new byte[2048];
 			int length;
 
@@ -50,6 +52,7 @@ public class Map extends JPanel {
 
 		// create a GUI component that loads the image: image.jpg
 		//
+		
 		ImageIcon imageIcon = new ImageIcon(
 				(new ImageIcon("image.jpg")).getImage().getScaledInstance(200, 150, WHEN_FOCUSED));
 		add(new JLabel(imageIcon));

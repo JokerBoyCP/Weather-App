@@ -4,12 +4,6 @@ import java.net.URL;
 import java.util.Scanner;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 public class api_call {
 
@@ -36,6 +30,7 @@ public class api_call {
 	private double wind_speed;
 	private double lat;
 	private double lon;
+	private Root root;
 	
 	
 	public api_call(String city) {
@@ -70,15 +65,11 @@ public class api_call {
 
 				Gson gson = new Gson();
 				Root root = gson.fromJson(informationString, Root.class);
+				
+				this.root = root;
 
 				
-				this.description = root.getWeather().get(0).getDescription();
-				this.city = root.getName();
-				this.temp = root.getMain().getTemp();
-				this.humidity = root.getMain().getHumidity();
-				this.wind_speed = root.getWind().getSpeed();
-				this.lat = root.getCoord().getLat();
-				this.lon = root.getCoord().getLon();
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -125,5 +116,8 @@ public class api_call {
 	protected void setWind_speed(double wind_speed) {
 		this.wind_speed = wind_speed;
 	}
-
+	
+	public Root getRoot() {
+	return this.root;
+	}
 }
