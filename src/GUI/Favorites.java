@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -8,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.LineBorder;
 
 import Data.FavoritenData;
@@ -17,7 +19,7 @@ public class Favorites extends JFrame {
 	JFrame frame = new JFrame();
 	FavoritenData favData;
 	
-	private JList list;
+	
 	private JLabel logo_label;
 	private JPanel data_panel;
 	private JPanel logo_panel;
@@ -36,12 +38,12 @@ public class Favorites extends JFrame {
 
 		// construct components
 		logo_label = new JLabel(
-				new ImageIcon("C:\\Users\\PACHECOC\\Desktop\\Java\\Weather App\\src\\weather-icon.gif"));
+				new ImageIcon("src\\weather-icon.gif"));
 		data_panel = new JPanel();
 		logo_panel = new JPanel();
 		favorites_label = new JLabel("Favorites:");
 		favData = new FavoritenData();
-		list = new JList(favData.toArray());
+		
 		
 		// add components
 
@@ -54,11 +56,14 @@ public class Favorites extends JFrame {
 
 		logo_panel.setBackground(Color.decode("#26292E"));
 		
-		list.setForeground(Color.white);
+		
 
-		data_panel.setBackground(Color.black);
+		//data_panel.setBackground(Color.black);
 		data_panel.setBorder(new LineBorder(Color.white));
-		data_panel.add(list);
+		data_panel.add(new JScrollPane(favData.list));
+		favData.list.setForeground(Color.black);
+		//data_panel.add(favData.list, BorderLayout.CENTER);
+		
 		
 		
 		

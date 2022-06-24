@@ -51,6 +51,7 @@ public class City extends JFrame implements ActionListener{
 	private JLabel temp;
 	private JLabel humidity;
 	private JLabel wind_speed;
+	
 
 	public City(String city, String description, double temp, long humidity, double wind_speed, double lat,
 			double lon) {
@@ -181,8 +182,10 @@ public class City extends JFrame implements ActionListener{
 		if (e.getSource() == back_button) {
 			frame.dispose();
 		}else if (e.getSource() == fav_button) {
-			
+			FavoritenData fdata = new FavoritenData();
+			fdata.flm.addElement( this.getName() );
 		}
 	}
 
-}
+	}
+
