@@ -34,7 +34,7 @@ public class Switzerland extends JFrame {
 
 		// construct components
 		logo_label = new JLabel(
-				new ImageIcon("src\\weather-icon.gif"));
+				new ImageIcon("C:\\Users\\PACHECOC\\Desktop\\Java\\Weather App\\src\\weather-icon.gif"));
 		data_panel = new JPanel();
 		logo_panel = new JPanel();
 		switzerland_label = new JLabel("Switzerland list:");
