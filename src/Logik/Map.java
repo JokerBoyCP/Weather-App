@@ -27,8 +27,8 @@ public class Map extends JPanel {
 					+ "&zoom=10&size=200x150&scale=2&key=AIzaSyCNTWV2mOf9M9iHrHLs-R5G4JCaiRMYons";
 			String destinationFile = "image.jpg";
 
-			// read the map image from Google
-			// then save it to a local file: image.jpg
+			// Liest das Kartenbild von Google und
+			// speichert es in einer lokalen Datei : image.jpg
 			//
 			URL url = new URL(imageUrl);
 			InputStream is = url.openStream();
@@ -50,7 +50,7 @@ public class Map extends JPanel {
 			System.exit(1);
 		}
 
-		// create a GUI component that loads the image: image.jpg
+		// ein GUI-Komponent wird erstellt, welcher das Bild lädt: image.jpg
 		//
 		
 		ImageIcon imageIcon = new ImageIcon(

@@ -36,18 +36,21 @@ public class api_call {
 	public api_call(String city) {
 
 		try {
-
+			//API aufruf via URL mit StadtName vom Konstruktor.
 			URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=" + city
 					+ "&units=metric&appid=cd15916a5ebb33e14165bd245b6e4cb8");
 
+			//Verbindung wird gemacht.
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
+			//"GET" code wird benützt um die Infos vom API zu holen.
 			conn.setRequestMethod("GET");
 			conn.connect();
 
-			// Check if connect is made
+			// Verbindung wird überprüft.
 			int responseCode = conn.getResponseCode();
 
-			// 200 OK
+			// Falls man das Code:200 zurückbekommt ist die Verbindung OK.
 			if (responseCode != 200) {
 				throw new RuntimeException("HttpResponseCode: " + responseCode);
 			} else {
