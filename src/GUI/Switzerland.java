@@ -34,7 +34,6 @@ public class Switzerland extends JFrame  implements ActionListener {
 	private JLabel switzerland_label;
 	
 	private JButton back_button;
-    private JButton remove_button;
     private JButton open_button;
     
 
@@ -57,7 +56,6 @@ public class Switzerland extends JFrame  implements ActionListener {
 		switzerland_label = new JLabel("Switzerland list:");
 		
 		back_button = new JButton("Back");
-		remove_button = new JButton("Remove");
 		open_button = new JButton("Open");
 		
 		favData = new FavoritenData();
@@ -69,7 +67,6 @@ public class Switzerland extends JFrame  implements ActionListener {
 		frame.add(data_panel);
 		frame.add(switzerland_label);
 		frame.add(back_button);
-		frame.add(remove_button);
 		frame.add(open_button);
 		
 		
@@ -88,7 +85,7 @@ public class Switzerland extends JFrame  implements ActionListener {
 		favData.flm.addElement("Genf");
 		favData.flm.addElement("Bern");
 		favData.flm.addElement("Sion");
-		favData.flm.addElement("Ticino");
+		favData.flm.addElement("Lugano");
 		favData.flm.addElement("Biel");
 		favData.flm.addElement("Thun");
 		
@@ -106,12 +103,6 @@ public class Switzerland extends JFrame  implements ActionListener {
 		back_button.setFont(new Font("SansSerif", Font.BOLD, 12));
 		back_button.setForeground(Color.white);
 		
-		remove_button.setBackground(Color.decode("#E68947"));
-		remove_button.setBorder(new LineBorder(Color.decode("#E68947")));
-		remove_button.addActionListener(this);
-		remove_button.setFont(new Font("SansSerif", Font.BOLD, 12));
-		remove_button.setForeground(Color.white);
-		
 		open_button.setBackground(Color.decode("#E68947"));
 		open_button.setBorder(new LineBorder(Color.decode("#E68947")));
 		open_button.addActionListener(this);
@@ -124,7 +115,6 @@ public class Switzerland extends JFrame  implements ActionListener {
 		switzerland_label.setBounds(42, 180, 100, 25);
 		data_panel.setBounds(40, 205, 480, 250);
 		back_button.setBounds (50, 470, 95, 25);
-	    remove_button.setBounds(160, 470, 98, 25);
 	    open_button.setBounds(425, 470, 95, 25);
 	    
 

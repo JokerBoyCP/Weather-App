@@ -76,13 +76,11 @@ public class Favorites extends JFrame implements ActionListener{
 		
 		favData.list.setModel(favData.flm);
 		
-		favData.flm.addElement("Basel");
 		
 		data_panel.setBorder(new LineBorder(Color.white));
 		data_panel.setLayout(new BorderLayout());
 		data_panel.add(favData.list, BorderLayout.CENTER);
 		favData.list.setForeground(Color.black);
-		favData.list.setBackground(Color.blue);
 		
 		
 		back_button.setBackground(Color.decode("#E68947"));
