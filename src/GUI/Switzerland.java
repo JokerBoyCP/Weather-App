@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import Data.FavoritenData;
+import Data.SwitzerlandData;
 import Logik.API_objects;
 import Logik.Root;
 import interfaces.WeatherApp;
@@ -26,7 +27,7 @@ public class Switzerland extends JFrame  implements ActionListener {
 
 	JFrame frame = new JFrame();
 	
-	FavoritenData favData;
+	SwitzerlandData swData ;
 	
 	private JLabel logo_label;
 	private JPanel data_panel;
@@ -58,7 +59,7 @@ public class Switzerland extends JFrame  implements ActionListener {
 		back_button = new JButton("Back");
 		open_button = new JButton("Open");
 		
-		favData = new FavoritenData();
+		swData = new SwitzerlandData();
 		
 		
 		// add components
@@ -76,23 +77,23 @@ public class Switzerland extends JFrame  implements ActionListener {
 
 		logo_panel.setBackground(Color.decode("#26292E"));
 
-		favData.list.setModel(favData.flm);
+		swData.list.setModel(swData.flm);
 		
-		favData.flm.addElement("Basel");
-		favData.flm.addElement("Lausanne");
-		favData.flm.addElement("Zürich");
-		favData.flm.addElement("Luzern");
-		favData.flm.addElement("Genf");
-		favData.flm.addElement("Bern");
-		favData.flm.addElement("Sion");
-		favData.flm.addElement("Lugano");
-		favData.flm.addElement("Biel");
-		favData.flm.addElement("Thun");
+		swData.flm.addElement("Basel");
+		swData.flm.addElement("Lausanne");
+		swData.flm.addElement("Zürich");
+		swData.flm.addElement("Luzern");
+		swData.flm.addElement("Genf");
+		swData.flm.addElement("Bern");
+		swData.flm.addElement("Sion");
+		swData.flm.addElement("Lugano");
+		swData.flm.addElement("Biel");
+		swData.flm.addElement("Thun");
 		
 		data_panel.setBorder(new LineBorder(Color.white));
 		data_panel.setLayout(new BorderLayout());
-		data_panel.add(favData.list, BorderLayout.CENTER);
-		favData.list.setForeground(Color.black);
+		data_panel.add(swData.list, BorderLayout.CENTER);
+		swData.list.setForeground(Color.black);
 		
 		
 		switzerland_label.setForeground(Color.white);
@@ -129,12 +130,12 @@ public class Switzerland extends JFrame  implements ActionListener {
 		/*City GUI Objekt wird instanziert und WeatherApp Interface wird aufgerufen auf die API_objects Klasse wo
 		wo die Methoden hinterlegt sind. */
 		City city;
-		int index = favData.list.getSelectedIndex();
+		int index = swData.list.getSelectedIndex();
 		WeatherApp wa1 = new API_objects();
 		/* Die getWeather Methode holt die Infos vom API und speichert diese in die rootVariable.
 		 * Die Root Klasse wird als Haptklasse für die verarbeitung der Daten benützt. Da drin 
 		 * befinden sich Objekte von den anderen Klassen wie z.Bs. Coord, Weather oder Wind.*/
-		Root rootVariable = wa1.getWeather(favData.flm.get(index));
+		Root rootVariable = wa1.getWeather(swData.flm.get(index));
 		city = new City(rootVariable.getName(), rootVariable.getWeather().get(0).getDescription(),
 				rootVariable.getMain().getTemp(), rootVariable.getMain().getHumidity(),
 				rootVariable.getWind().getSpeed(), rootVariable.getCoord().getLat(),
