@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import Data.FavoritenData;
+import Data.SwitzerlandData;
 import Logik.API_objects;
 import Logik.Map;
 import Logik.Root;
@@ -29,7 +30,7 @@ public class City extends JFrame implements ActionListener {
 
 	// GoogleMaps Map Objekt wird instanziert.
 	Map mpp;
-	FavoritenData favData;
+	SwitzerlandData swData;
 
 	// Variablen werden instaziert.
 	private JLabel logo_label;
@@ -75,7 +76,7 @@ public class City extends JFrame implements ActionListener {
 		logo_panel = new JPanel();
 		back_button = new JButton("Back");
 		fav_button = new JButton("Add to favorites");
-		favData = new FavoritenData();
+		swData = new SwitzerlandData();
 
 		//Die Eigenschaften der Komponenten werden angepasst.
 		lb1 = new JLabel("   Description:");
@@ -179,8 +180,8 @@ public class City extends JFrame implements ActionListener {
 		if (e.getSource() == back_button) {
 			frame.dispose();
 		} else if (e.getSource() == fav_button) {
-			FavoritenData favData = new FavoritenData();
-			favData.flm.addElement("Basel");
+			SwitzerlandData swData = new SwitzerlandData();
+			swData.flm.addElement("Basel");
 		}
 	}
 
