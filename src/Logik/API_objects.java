@@ -2,6 +2,7 @@ package Logik;
 
 import interfaces.WeatherApp;
 
+//Interface Implementierung 
 public  class API_objects implements WeatherApp {
 	
 	/*getWeather Methode erstellt ein Objekt von der Klasse api_call welches 
